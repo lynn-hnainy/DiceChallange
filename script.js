@@ -1,4 +1,5 @@
-window.onload = function afterWebPageLoad() { 
+window.onload = function afterWebPageLoad() {
+    var msg=''; 
     img_src="images/dice";
     //generate a number from 1 to 6
     var number1=Math.floor(Math.random()*6)+1;
@@ -13,4 +14,14 @@ window.onload = function afterWebPageLoad() {
     var img2=document.getElementsByClassName("img2");
     img1[0].src=img_src1;
     img2[0].src=img_src2;
+    if(number1>number2){
+        msg='Player 1 Wins';
+    }
+    else if(number1<number2){
+        msg='Player 2 Wins';
+    }
+    else{
+        msg='Draw!';
+    }
+    document.querySelector("h1").innerHTML=msg;
 }
